@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
       SizeScaleConfig.screenWidth = screenSize.width;
       SizeScaleConfig().calculateScaleRatios();
     }
+    SizeScaleConfig.scaleFactor = MediaQuery.of(context).textScaleFactor;
   }
 
   @override

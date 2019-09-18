@@ -1,6 +1,8 @@
 /*
 Base height and weight is as per the viewport size given in the designs
 Hence baseHeight and baseWidth are constant throughout the app
+Viewport designs are as per Iphone 7plus
+ie. height = 736.0 and width = 414.0
  */
 class SizeScaleConfig {
   final double baseHeight = 736.0;
@@ -10,17 +12,18 @@ class SizeScaleConfig {
   static double screenWidth;
   static double heightScaleRatio;
   static double widthScaleRatio;
+  static double scaleFactor;
 
-  calculateScaleRatios() {
+  void calculateScaleRatios() {
     heightScaleRatio = screenHeight / baseHeight;
     widthScaleRatio = screenWidth / baseWidth;
   }
 
-  scaleHeight(double actualHeight) {
-    return actualHeight * heightScaleRatio;
+  double scaleHeight(double actualHeight) {
+    return actualHeight * heightScaleRatio * scaleFactor;
   }
 
-  scaleWidth(double actualWidth) {
-    return actualWidth * widthScaleRatio;
+  double scaleWidth(double actualWidth) {
+    return actualWidth * widthScaleRatio * scaleFactor;
   }
 }
